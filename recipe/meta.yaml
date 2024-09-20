@@ -1,4 +1,4 @@
-{% set version = '1.12.2' %}
+{% set version = "1.12.15" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/bigsnpr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/bigsnpr/bigsnpr_{{ version }}.tar.gz
-  sha256: 443a5529ae2596eb3cf8f19760893b96beba4f12a4decbf6bea645db4d2187f6
+  sha256: f21c1cdeffea4de8af15442f632ac01565c00c5f8d4c7105f530aee6908943b3
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -27,7 +27,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -110,8 +112,7 @@ test:
 about:
   home: https://privefl.github.io/bigsnpr/
   license: GPL-3.0-only
-  summary: "Easy-to-use, efficient, flexible and scalable tools for analyzing massive SNP arrays.
-    Priv\xE9 et al. (2018) <doi:10.1093/bioinformatics/bty185>."
+  summary: "Easy-to-use, efficient, flexible and scalable tools for analyzing massive SNP arrays. Privé et al. (2018) <doi:10.1093/bioinformatics/bty185>."
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
