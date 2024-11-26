@@ -1,4 +1,4 @@
-{% set version = "1.12.15" %}
+{% set version = "1.12.18" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/bigsnpr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/bigsnpr/bigsnpr_{{ version }}.tar.gz
-  sha256: f21c1cdeffea4de8af15442f632ac01565c00c5f8d4c7105f530aee6908943b3
+  sha256: 492c2296cb09e9363dedf66fa33c007ab014dcd04d16732a6c5f5e334f0f8e4a
 
 build:
   merge_build_host: true  # [win]
