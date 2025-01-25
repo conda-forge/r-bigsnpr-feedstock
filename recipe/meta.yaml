@@ -63,7 +63,6 @@ requirements:
     - libzlib
   run:
     - r-base
-    - libwinpthread-git  # [win]
     - zlib               # [win]
     - r-matrix >=1.3.0
     - r-rcpp
