@@ -38,24 +38,24 @@ requirements:
     - libgomp                      # [linux]
     - llvm-openmp                  # [osx]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-    - r-matrix >=1.3.0
-    - r-rcpp
-    - r-rcpparmadillo >=0.9.600
-    - r-bigassertr >=0.1.6
-    - r-bigparallelr
-    - r-bigreadr
-    - r-bigsparser >=0.6
-    - r-bigstatsr >=1.5.11
-    - r-bigutilsr >=0.3.3
-    - r-data.table >=1.12.4
-    - r-dorng
-    - r-foreach
-    - r-ggplot2
-    - r-magrittr
-    - r-rmio
-    - r-roptim >=0.1.6
-    - r-runonce >=0.2.3
-    - r-vctrs
+    - r-matrix >=1.3.0             # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - r-rcpparmadillo >=0.9.600    # [build_platform != target_platform]
+    - r-bigassertr >=0.1.6         # [build_platform != target_platform]
+    - r-bigparallelr               # [build_platform != target_platform]
+    - r-bigreadr                   # [build_platform != target_platform]
+    - r-bigsparser >=0.6           # [build_platform != target_platform]
+    - r-bigstatsr >=1.5.11         # [build_platform != target_platform]
+    - r-bigutilsr >=0.3.3          # [build_platform != target_platform]
+    - r-data.table >=1.12.4        # [build_platform != target_platform]
+    - r-dorng                      # [build_platform != target_platform]
+    - r-foreach                    # [build_platform != target_platform]
+    - r-ggplot2                    # [build_platform != target_platform]
+    - r-magrittr                   # [build_platform != target_platform]
+    - r-rmio                       # [build_platform != target_platform]
+    - r-roptim >=0.1.6             # [build_platform != target_platform]
+    - r-runonce >=0.2.3            # [build_platform != target_platform]
+    - r-vctrs                      # [build_platform != target_platform]
   host:
     - r-base
     - r-matrix >=1.3.0
