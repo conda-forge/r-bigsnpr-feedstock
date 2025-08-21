@@ -1,4 +1,4 @@
-{% set version = "1.12.18" %}
+{% set version = "1.12.21" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/bigsnpr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/bigsnpr/bigsnpr_{{ version }}.tar.gz
-  sha256: 492c2296cb09e9363dedf66fa33c007ab014dcd04d16732a6c5f5e334f0f8e4a
+  sha256: 074c55d5342c96d93a8299cd94b2e8561903ab6ff326c65a14bbbee02dc02821
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -21,7 +21,7 @@ build:
     - '*/R.dll'            # [win]
     - '*/Rblas.dll'        # [win]
     - '*/Rlapack.dll'      # [win]
-  skip: True  # [ppc64le]
+  skip: true  # [ppc64le]
 
 requirements:
   build:
