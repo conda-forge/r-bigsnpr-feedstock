@@ -16,12 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
-  # This is needed to suppress a warning about R.dll not being found
   missing_dso_whitelist:
     - '*/R.dll'            # [win]
     - '*/Rblas.dll'        # [win]
     - '*/Rlapack.dll'      # [win]
-  skip: true  # [ppc64le]
 
 requirements:
   build:
@@ -31,6 +29,7 @@ requirements:
     - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('fortran') }}        # [osx and arm64]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -130,7 +129,6 @@ about:
   summary: "Easy-to-use, efficient, flexible and scalable tools for analyzing massive SNP arrays. Privé et al. (2018) <doi:10.1093/bioinformatics/bty185>."
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
-# Encoding: UTF-8
 
 extra:
   recipe-maintainers:
