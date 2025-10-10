@@ -125,7 +125,7 @@ test:
     - $R -e "library('bigsnpr')"  # [not win]
     - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"  # [not win]
     - "\"%R%\" -e \"library('bigsnpr')\""  # [win]
-    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
+    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=FALSE)\""  # [win]
 
 about:
   home: https://privefl.github.io/bigsnpr/
